@@ -1,0 +1,193 @@
+.contenedor--cajas {
+	max-width: 1400px;
+	min-width: 320px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.caja {
+	
+	@include caja;
+	&__contenido {
+		padding: 25px;
+		background-color: $color-claro;		
+	}
+	&__categoria {
+		color: $color-secundario;
+		@include titulos($Fuente2);
+	}
+}
+
+.contenedor--cajas .caja a {
+	text-decoration: none;	
+	color: $color-variacion;
+	@include titulos($Fuente2);
+}
+
+.contenido {
+	margin-bottom: 40px;
+	justify-content: space-evenly;
+	display: flex;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 30px 0;
+} 
+
+
+.caja--con-fondo{	
+	display: flex;
+	flex-direction: column;	
+	box-shadow: none;
+	position: relative;
+	background-color:$color-primario;	
+	margin: 0 auto;
+	width: 100%;
+    height: 100%;   
+	overflow: hidden;	
+	
+	.caja__imagen{
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;	
+		
+	}
+	
+	img{
+			max-width: 100%;
+			
+					
+			@include media(tablet){	
+				position: absolute;
+				opacity: .5;
+				object-fit: cover;	
+					
+			}
+	}
+	&__contenido{	
+		margin: 0 auto;
+		padding: 20px;
+		position:absolute;
+		text-align: center;
+		color: $color-claro;
+		p {
+			display: none;
+		}
+		h2{				
+			text-align: center;
+			color: get-opacity($color-claro, .8);			
+		}
+
+		@include media(tablet){
+			position: relative;	
+			width: 60%;	
+			height: auto;
+			
+			h2{				
+				@include font-size(18px);			
+			}
+		}
+
+		
+	}		
+		
+	
+	&__categoria{		
+		display: inline-block;
+		width: auto;
+		max-width: 100px;
+		margin:0 auto;
+		text-align: center;
+		background-color: $color-secundario;
+		color: $color-claro;
+		@include titulos($Fuente2);
+		
+	}
+}
+.caja--grande{
+	@include media(tablet){
+		max-width: 600px;	
+		max-height: 400px;	
+		margin-bottom: 90px;
+	
+		h2{
+			@include titulos($Fuente2);			
+					
+		}
+		.caja-con-fondo__contenido{
+			padding:20px;
+			margin: 0 auto;
+		}
+		
+	}
+
+	@include media(desktop-m){
+		max-width: 800px;	
+		max-height: 800px;	
+		margin-bottom: 90px;
+	
+		h2{
+			@include font-size(30px);
+			@include titulos($Fuente2);			
+					
+		}
+		.caja-con-fondo__contenido{
+			padding:20px;
+			margin: 0 auto;
+		}
+		
+	}
+
+	@include media(desktop-l){
+		max-width: 1150px;	
+		max-height: 800px;	
+		margin-bottom: 90px;
+	
+		h2{
+			
+			@include titulos($Fuente2);
+			@include font-size(50px);			
+					
+		}
+		.caja-con-fondo__contenido{
+			padding:20px;
+			margin: 0 auto;
+		}
+		
+	}
+}
+
+.caja--mediana{	
+	@include media(tablet){
+		max-width: 400px;	
+		max-height: 400px;
+	
+	}
+
+	@include media(desktop-m){
+		max-width: 800px;	
+		max-height: 800px;
+	
+	}
+
+	@include media(desktop-l){
+		max-width: 1000px;	
+		max-height: 800px;
+	
+	}
+}
+
+.caja--pequeña{
+	@include media(tablet){		
+		max-width: 400px;	
+		max-height: 450px;	
+	}
+
+	@include media(desktop-m){
+		max-width: 800px;	
+		max-height: 800px;	
+	}
+}
+	
